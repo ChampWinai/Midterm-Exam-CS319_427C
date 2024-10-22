@@ -1,0 +1,21 @@
+<form id="studentForm">
+    <input type="text" id="studentName" placeholder="Enter student name" required>
+    <button type="submit">Add Student</button>
+  </form>
+  <ul id="studentList"></ul>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#studentForm").on("submit", function (event) {
+        event.preventDefault();
+        const studentName = $("#studentName").val();
+        if (studentName) {
+          $("#studentList").append(`<li>${studentName}</li>`);
+          alert(`${studentName} was successfully added!`);
+          $("#studentName").val("");
+        }
+      });
+    });
+  </script>
+  
